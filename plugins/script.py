@@ -5,7 +5,7 @@ class Translation:
     START_TEXT = """
 Hi {} 👋
 
-<b>میں ہادی پلے کا آفیشل اپلوڈر بوٹ ہوں۔</b>
+<b>Welcome to HadiPlay Official Uploader Bot!</b>
 
 آپ مجھے کسی بھی ویڈیو کا ڈائریکٹ لنک، یوٹیوب یا گوگل ڈرائیو کا لنک بھیجیں، میں اسے فوراً آپ کے لیے ٹیلی گرام پر اپلوڈ کر دوں گا۔
 """
@@ -17,22 +17,25 @@ Hi {} 👋
 2️⃣ اپنی پسند کا آپشن (Video یا File) منتخب کریں۔
 3️⃣ تھوڑی دیر انتظار کریں، آپ کی فائل اپلوڈ ہو جائے گی۔
 
-<b>ویب سائٹس:</b> HadiPlay.xyz | HadiPlay.net
+<b>Official Platforms:</b>
+🌐 HadiPlay.xyz | HadiPlay.net
+📢 Join our WhatsApp Channel for updates!
 """
 
     ABOUT_TEXT = """
-<b>♻️ بوٹ کا نام:</b> HadiPlay Uploader
-<b>🌐 ویب سائٹ 1:</b> <a href="https://HadiPlay.xyz">HadiPlay.xyz</a>
-<b>🌐 ویب سائٹ 2:</b> <a href="https://HadiPlay.net">HadiPlay.net</a>
-<b>📑 زبان:</b> Python 3.10
-<b>👲 اونر:</b> M Maaz
+<b>♻️ Bot Name:</b> HadiPlay Uploader
+<b>🌐 Website 1:</b> <a href="https://HadiPlay.xyz">HadiPlay.xyz</a>
+<b>🌐 Website 2:</b> <a href="https://HadiPlay.net">HadiPlay.net</a>
+<b>📢 WhatsApp:</b> <a href="https://whatsapp.com/channel/0029Vb7CiqG0rGiI6HUgSB3V">Join Channel</a>
+<b>📑 Language:</b> Python 3.10
+<b>👲 Owner:</b> M Maaz
 """
 
     PROGRESS = """
-🔰 اسپیڈ: {3}/s
-🌀 مکمل: {1}
-🎥 فائل سائز: {2}
-⏳ باقی وقت: {4}
+🔰 Speed: {3}/s
+🌀 Done: {1}
+🎥 Total Size: {2}
+⏳ Time Left: {4}
 """
     ID_TEXT = """
 🆔 آپ کی ٹیلی گرام ID یہ ہے: <code>{}</code>
@@ -55,6 +58,9 @@ Hi {} 👋
                 InlineKeyboardButton("🌐 HadiPlay.xyz", url="https://HadiPlay.xyz"),
                 InlineKeyboardButton("🌐 HadiPlay.net", url="https://HadiPlay.net"),
             ],
+            [
+                InlineKeyboardButton("📢 Join WhatsApp Channel", url="https://whatsapp.com/channel/0029Vb7CiqG0rGiI6HUgSB3V")
+            ],
             [InlineKeyboardButton("📛 Close", callback_data="close")],
         ]
     )
@@ -63,6 +69,9 @@ Hi {} 👋
             [
                 InlineKeyboardButton("🏠 Home", callback_data="home"),
                 InlineKeyboardButton("🦊 About", callback_data="about"),
+            ],
+            [
+                InlineKeyboardButton("📢 WhatsApp Channel", url="https://whatsapp.com/channel/0029Vb7CiqG0rGiI6HUgSB3V")
             ],
             [InlineKeyboardButton("📛 Close", callback_data="close")],
         ]
