@@ -1,103 +1,40 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-
 class Translation:
     START_TEXT = """
 Hi {} 👋
 
-<b>Welcome to HadiPlay Official Uploader Bot!</b>
-
-آپ مجھے کسی بھی ویڈیو کا ڈائریکٹ لنک، یوٹیوب یا گوگل ڈرائیو کا لنک بھیجیں، میں اسے فوراً آپ کے لیے ٹیلی گرام پر اپلوڈ کر دوں گا۔
+<b>HadiPlay Uploader میں خوش آمدید!</b>
+لنک بھیجیں، پھر میں آپ سے کیپشن مانگوں گا۔
 """
 
     HELP_TEXT = """
-<b>کیسے استعمال کریں؟</b>
-
-1️⃣ بوٹ کو کوئی بھی ڈاؤن لوڈ لنک بھیجیں۔
-2️⃣ اپنی پسند کا آپشن (Video یا File) منتخب کریں۔
-3️⃣ تھوڑی دیر انتظار کریں، آپ کی فائل اپلوڈ ہو جائے گی۔
-
-<b>Official Platforms:</b>
-🌐 HadiPlay.xyz | HadiPlay.net
-📢 Join our WhatsApp Channel for updates!
+1️⃣ لنک بھیجیں۔
+2️⃣ بوٹ آپ سے کیپشن مانگے گا، وہ ٹائپ کریں۔
+3️⃣ ویڈیو فل سائز میں اپلوڈ ہو جائے گی۔
 """
 
-    ABOUT_TEXT = """
-<b>♻️ Bot Name:</b> HadiPlay Uploader
-<b>🌐 Website 1:</b> <a href="https://HadiPlay.xyz">HadiPlay.xyz</a>
-<b>🌐 Website 2:</b> <a href="https://HadiPlay.net">HadiPlay.net</a>
-<b>📢 WhatsApp:</b> <a href="https://whatsapp.com/channel/0029Vb7CiqG0rGiI6HUgSB3V">Join Channel</a>
-<b>📑 Language:</b> Python 3.10
-<b>👲 Owner:</b> M Maaz
-"""
-
+    # پروگریس بار کی مکمل تفصیل کے ساتھ
     PROGRESS = """
-🔰 Speed: {3}/s
-🌀 Done: {1}
-🎥 Total Size: {2}
-⏳ Time Left: {4}
-"""
-    ID_TEXT = """
-🆔 آپ کی ٹیلی گرام ID یہ ہے: <code>{}</code>
+📊 <b>Uploading Status:</b> {0}%
+🚀 <b>Speed:</b> {3}/s
+✅ <b>Done:</b> {1}
+🎥 <b>Total:</b> {2}
+⏳ <b>ETA:</b> {4}
 """
 
-    INFO_TEXT = """
-🤹 نام: <b>{}</b>
-🧑🏻‍🎓 یوزر نیم: <b>@{}</b>
-🆔 ٹیلی گرام ID: <code>{}</code>
-👲 اسٹیٹس: <b>HadiPlay User</b>
-"""
+    # یہ وہ بٹن ہیں جو ہر ویڈیو کے نیچے اپلوڈ کے بعد نظر آئیں گے
+    CAPTION_BUTTONS = InlineKeyboardMarkup(
+        [
+            [InlineKeyboardButton("🌐 Visit HadiPlay.xyz", url="https://HadiPlay.xyz")],
+            [InlineKeyboardButton("📢 WhatsApp Channel", url="https://whatsapp.com/channel/0029Vb7CiqG0rGiI6HUgSB3V")]
+        ]
+    )
 
-    START_BUTTONS = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton("❓ Help", callback_data="help"),
-                InlineKeyboardButton("🦊 About", callback_data="about"),
-            ],
-            [
-                InlineKeyboardButton("🌐 HadiPlay.xyz", url="https://HadiPlay.xyz"),
-                InlineKeyboardButton("🌐 HadiPlay.net", url="https://HadiPlay.net"),
-            ],
-            [
-                InlineKeyboardButton("📢 Join WhatsApp Channel", url="https://whatsapp.com/channel/0029Vb7CiqG0rGiI6HUgSB3V")
-            ],
-            [InlineKeyboardButton("📛 Close", callback_data="close")],
-        ]
-    )
-    HELP_BUTTONS = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton("🏠 Home", callback_data="home"),
-                InlineKeyboardButton("🦊 About", callback_data="about"),
-            ],
-            [
-                InlineKeyboardButton("📢 WhatsApp Channel", url="https://whatsapp.com/channel/0029Vb7CiqG0rGiI6HUgSB3V")
-            ],
-            [InlineKeyboardButton("📛 Close", callback_data="close")],
-        ]
-    )
-    ABOUT_BUTTONS = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton("🏠 Home", callback_data="home"),
-                InlineKeyboardButton("❓ Help", callback_data="help"),
-            ],
-            [InlineKeyboardButton("📛 Close", callback_data="close")],
-        ]
-    )
-    BUTTONS = InlineKeyboardMarkup(
-        [[InlineKeyboardButton("📛 Close", callback_data="close")]]
-    )
-    FORMAT_SELECTION = "اب اپنی پسند کا فارمیٹ منتخب کریں 👇"
-    SET_CUSTOM_USERNAME_PASSWORD = """"""
-    DOWNLOAD_START = "ڈاؤن لوڈنگ شروع ہو رہی ہے... ⌛\n\n <i>{} </i>"
-    UPLOAD_START = "<i>{} </i>\n\n📤 ٹیلی گرام پر اپلوڈ ہو رہا ہے، براہ کرم انتظار کریں..."
-    RCHD_TG_API_LIMIT = "معذرت! فائل 2GB سے بڑی ہے، جو ٹیلی گرام کی حد سے زیادہ ہے۔"
-    AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = (
-        "✅ کامیابی سے اپلوڈ ہو گیا۔\n\nشکریہ HadiPlay استعمال کرنے کے لیے!"
-    )
-    FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "✅ تھمب نیل صاف کر دیا گیا۔"
-    CUSTOM_CAPTION_UL_FILE = ""
-    NO_VOID_FORMAT_FOUND = "ایرر: فارمیٹ نہیں ملا <code>{}</code>"
-    FREE_USER_LIMIT_Q_SZE = "ٹائم آؤٹ: سرور مصروف ہے۔"
-    SLOW_URL_DECED = "یہ لنک بہت سلو ہے، براہ کرم کوئی تیز لنک ٹرائی کریں۔"
+    DOWNLOAD_START = "📥 <b>ڈاؤن لوڈنگ شروع:</b>\n\n<i>{}</i>"
+    UPLOAD_START = "📤 <b>ڈاؤن لوڈ مکمل! اب فل سائز ویڈیو اپلوڈ ہو رہی ہے...</b>"
+    
+    # یہ حصہ خالی رکھیں تاکہ آپ کا ٹائپ کیا ہوا کیپشن استعمال ہو
+    CUSTOM_CAPTION_UL_FILE = "{}" 
+
+    AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "✅ <b>Success!</b>\n\nآپ کی ویڈیو فل سائز میں اپلوڈ کر دی گئی ہے۔"
