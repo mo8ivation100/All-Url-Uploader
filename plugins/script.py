@@ -3,64 +3,46 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 class Translation:
     START_TEXT = """
-Hi {}
+Hi {} 👋
 
-I am Powerful Url Uploader Bot
+<b>میں ہادی پلے کا آفیشل اپلوڈر بوٹ ہوں۔</b>
+
+آپ مجھے کسی بھی ویڈیو کا ڈائریکٹ لنک، یوٹیوب یا گوگل ڈرائیو کا لنک بھیجیں، میں اسے فوراً آپ کے لیے ٹیلی گرام پر اپلوڈ کر دوں گا۔
 """
 
     HELP_TEXT = """
+<b>کیسے استعمال کریں؟</b>
 
-# Send me the Google Drive | ytdl | direct links.
+1️⃣ بوٹ کو کوئی بھی ڈاؤن لوڈ لنک بھیجیں۔
+2️⃣ اپنی پسند کا آپشن (Video یا File) منتخب کریں۔
+3️⃣ تھوڑی دیر انتظار کریں، آپ کی فائل اپلوڈ ہو جائے گی۔
 
-# Select the desired option.
-
-# Then be relaxed your file will be uploaded soon..
+<b>ویب سائٹس:</b> HadiPlay.xyz | HadiPlay.net
 """
 
-    # give credit to developer
-
     ABOUT_TEXT = """
-<b>♻️ My Name</b> : Url Uploader Bot
-
-<b>🌀 Channel</b> : <a href="https://t.me/TMWAD">@TMWAD</a>
-
-<b>🌺 Heroku</b> : <a href="https://heroku.com/">Heroku</a>
-
-<b>📑 Language :</b> <a href="https://www.python.org/">Python 3.10.5</a>
-
-<b>🇵🇲 Framework :</b> <a href="https://docs.pyrogram.org/">Pyrogram 2.0.30</a>
-
-<b>👲 Developer :</b> <a href="https://t.me/kinu6">@kinu6</a>
-
+<b>♻️ بوٹ کا نام:</b> HadiPlay Uploader
+<b>🌐 ویب سائٹ 1:</b> <a href="https://HadiPlay.xyz">HadiPlay.xyz</a>
+<b>🌐 ویب سائٹ 2:</b> <a href="https://HadiPlay.net">HadiPlay.net</a>
+<b>📑 زبان:</b> Python 3.10
+<b>👲 اونر:</b> M Maaz
 """
 
     PROGRESS = """
-🔰 Speed : {3}/s\n\n
-🌀 Done : {1}\n\n
-🎥 Tᴏᴛᴀʟ sɪᴢᴇ  : {2}\n\n
-⏳ Tɪᴍᴇ ʟᴇғᴛ : {4}\n\n
+🔰 اسپیڈ: {3}/s
+🌀 مکمل: {1}
+🎥 فائل سائز: {2}
+⏳ باقی وقت: {4}
 """
     ID_TEXT = """
-🆔 Your Telegram ID 𝐢𝐬 :- <code>{}</code>
+🆔 آپ کی ٹیلی گرام ID یہ ہے: <code>{}</code>
 """
 
     INFO_TEXT = """
-
- 🤹 First Name : <b>{}</b>
-
- 🚴‍♂️ Second Name : <b>{}</b>
-
- 🧑🏻‍🎓 Username : <b>@{}</b>
-
- 🆔 Telegram Id : <code>{}</code>
-
- 📇 Profile Link : <b>{}</b>
-
- 📡 Dc : <b>{}</b>
-
- 📑 Language : <b>{}</b>
-
- 👲 Status : <b>{}</b>
+🤹 نام: <b>{}</b>
+🧑🏻‍🎓 یوزر نیم: <b>@{}</b>
+🆔 ٹیلی گرام ID: <code>{}</code>
+👲 اسٹیٹس: <b>HadiPlay User</b>
 """
 
     START_BUTTONS = InlineKeyboardMarkup(
@@ -68,6 +50,10 @@ I am Powerful Url Uploader Bot
             [
                 InlineKeyboardButton("❓ Help", callback_data="help"),
                 InlineKeyboardButton("🦊 About", callback_data="about"),
+            ],
+            [
+                InlineKeyboardButton("🌐 HadiPlay.xyz", url="https://HadiPlay.xyz"),
+                InlineKeyboardButton("🌐 HadiPlay.net", url="https://HadiPlay.net"),
             ],
             [InlineKeyboardButton("📛 Close", callback_data="close")],
         ]
@@ -93,19 +79,16 @@ I am Powerful Url Uploader Bot
     BUTTONS = InlineKeyboardMarkup(
         [[InlineKeyboardButton("📛 Close", callback_data="close")]]
     )
-    FORMAT_SELECTION = "Now Select the desired formats"
+    FORMAT_SELECTION = "اب اپنی پسند کا فارمیٹ منتخب کریں 👇"
     SET_CUSTOM_USERNAME_PASSWORD = """"""
-    DOWNLOAD_START = "Trying to Download ⌛\n\n <i>{} </i>"
-    UPLOAD_START = "<i>{} </i>\n\n📤 Uploading Please Wait "
-    RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload files greater than 2GB due to Telegram API limitations."
+    DOWNLOAD_START = "ڈاؤن لوڈنگ شروع ہو رہی ہے... ⌛\n\n <i>{} </i>"
+    UPLOAD_START = "<i>{} </i>\n\n📤 ٹیلی گرام پر اپلوڈ ہو رہا ہے، براہ کرم انتظار کریں..."
+    RCHD_TG_API_LIMIT = "معذرت! فائل 2GB سے بڑی ہے، جو ٹیلی گرام کی حد سے زیادہ ہے۔"
     AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = (
-        "Dᴏᴡɴʟᴏᴀᴅᴇᴅ ɪɴ {} sᴇᴄᴏɴᴅs.\n\nTʜᴀɴᴋs Fᴏʀ Usɪɴɢ Mᴇ\n\nUᴘʟᴏᴀᴅᴇᴅ ɪɴ {} sᴇᴄᴏɴᴅs"
+        "✅ کامیابی سے اپلوڈ ہو گیا۔\n\nشکریہ HadiPlay استعمال کرنے کے لیے!"
     )
-    FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "✅ Media cleared succesfully."
+    FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "✅ تھمب نیل صاف کر دیا گیا۔"
     CUSTOM_CAPTION_UL_FILE = ""
-    NO_VOID_FORMAT_FOUND = "ERROR... <code>{}</code>"
-    FREE_USER_LIMIT_Q_SZE = "Cannot Process, Time OUT..."
-    SLOW_URL_DECED = """
-    Gosh that seems to be a very slow URL. Since you were screwing my home,
-    I am in no mood to download this file. Meanwhile, why don't you try this:==> https://shrtz.me/PtsVnf6
-    and get me a fast URL so that I can upload to Telegram, without me slowing down for other users."""
+    NO_VOID_FORMAT_FOUND = "ایرر: فارمیٹ نہیں ملا <code>{}</code>"
+    FREE_USER_LIMIT_Q_SZE = "ٹائم آؤٹ: سرور مصروف ہے۔"
+    SLOW_URL_DECED = "یہ لنک بہت سلو ہے، براہ کرم کوئی تیز لنک ٹرائی کریں۔"
